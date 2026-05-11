@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>VIP PREDICTION</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial,sans-serif;
+    }
+
+    body{
+      background:#020814;
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:18px;
+      overflow-x:hidden;
+      color:white;
+    }
+
+    .card{
+      width:100%;
+      max-width:420px;
+      background:rgba(7,17,31,0.95);
+      border-radius:28px;
+      padding:28px 22px;
+      text-align:center;
+      border:1px solid rgba(255,255,255,0.06);
+      box-shadow:
+      0 0 25px rgba(0,0,0,0.5),
+      0 0 60px rgba(0,140,255,0.08);
+      backdrop-filter:blur(10px);
+    }
+
+    /* PROFILE IMAGE */
+
+    .profile-wrap{
+      display:flex;
+      justify-content:center;
+      margin-bottom:24px;
+    }
+
+    .profile-glow{
+      width:170px;
+      height:170px;
+      border-radius:50%;
+      padding:5px;
+      background:linear-gradient(
+      45deg,
+      #00d9ff,
+      #0066ff,
+      #ff00cc,
+      #ff0033,
+      #00d9ff
+      );
+      background-size:300% 300%;
+      animation:glow 5s linear infinite;
+      box-shadow:
+      0 0 20px #00d9ff,
+      0 0 40px #0066ff,
+      0 0 60px #ff00cc;
+    }
+
+    .profile-glow img{
+      width:100%;
+      height:100%;
+      border-radius:50%;
+      object-fit:cover;
+      border:5px solid #07111f;
+      display:block;
+    }
+
+    @keyframes glow{
+      0%{
+        background-position:0% 50%;
+      }
+      100%{
+        background-position:300% 50%;
+      }
+    }
+
+    /* TITLE */
+
+    .title{
+      font-size:38px;
+      font-weight:800;
+      color:#2da8ff;
+      margin-bottom:10px;
+      letter-spacing:1px;
+    }
+
+    .subtitle{
+      font-size:16px;
+      line-height:1.6;
+      color:#cfd6df;
+      margin-bottom:28px;
+    }
+
+    /* BUTTON */
+
+    .btn{
+      display:block;
+      width:100%;
+      text-decoration:none;
+      background:linear-gradient(90deg,#ff3131,#ff0000);
+      color:white;
+      padding:17px;
+      border-radius:16px;
+      margin-top:18px;
+      font-size:20px;
+      font-weight:700;
+      transition:0.3s ease;
+      box-shadow:0 0 20px rgba(255,0,0,0.35);
+    }
+
+    .btn:hover{
+      transform:scale(1.02);
+      box-shadow:0 0 35px rgba(255,0,0,0.6);
+    }
+
+    /* DISCLAIMER */
+
+    .disclaimer{
+      margin-top:28px;
+      font-size:13px;
+      color:#aeb8c5;
+      line-height:1.7;
+      background:#0c1728;
+      padding:14px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,0.04);
+    }
+
+    .footer{
+      margin-top:22px;
+      font-size:15px;
+      color:#ff5b5b;
+      font-weight:600;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:480px){
+
+      .card{
+        padding:24px 18px;
+      }
+
+      .profile-glow{
+        width:145px;
+        height:145px;
+      }
+
+      .title{
+        font-size:31px;
+      }
+
+      .subtitle{
+        font-size:15px;
+      }
+
+      .btn{
+        font-size:18px;
+        padding:15px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="card">
+
+    <!-- PROFILE IMAGE -->
+
+    <div class="profile-wrap">
+
+      <div class="profile-glow">
+
+        <img src="https://i.ibb.co/qMtNXHd7/Whats-App-Image-2026-03-17-at-9-44-37-PM.jpg" alt="Profile">
+
+      </div>
+
+    </div>
+
+    <!-- TITLE -->
+
+    <div class="title">VIP PREDICTION</div>
+
+    <div class="subtitle">
+      Join our official Telegram channel for VIP predictions,
+      updates, and premium content.
+    </div>
+
+    <!-- BUTTON -->
+
+    <a href="https://t.me/+hwjx7aGCx40wZjNl"
+       class="btn">
+       JOIN TELEGRAM CHANNEL
+    </a>
+
+    <!-- DISCLAIMER -->
+
+    <div class="disclaimer">
+      Disclaimer: This page is created for informational
+      and educational purposes only. Users should verify
+      all information independently before taking action.
+    </div>
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+      Powered by VIP Prediction
+    </div>
+
+  </div>
+
+</body>
+</html>
