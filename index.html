@@ -2,230 +2,304 @@
 <html lang="en">
 <head>
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>VIP PREDICTION</title>
+<title>VIP PREDICTION</title>
 
-  <style>
+<style>
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:Arial,sans-serif;
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
 
-    body{
-      background:#020814;
-      min-height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      padding:18px;
-      overflow-x:hidden;
-      color:white;
-    }
+body{
+  background:#020814;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:18px;
+  color:#fff;
+}
 
-    .card{
-      width:100%;
-      max-width:420px;
-      background:rgba(7,17,31,0.95);
-      border-radius:28px;
-      padding:28px 22px;
-      text-align:center;
-      border:1px solid rgba(255,255,255,0.06);
-      box-shadow:
-      0 0 25px rgba(0,0,0,0.5),
-      0 0 60px rgba(0,140,255,0.08);
-      backdrop-filter:blur(10px);
-    }
+.card{
+  width:100%;
+  max-width:420px;
+  background:rgba(7,17,31,0.95);
+  border-radius:28px;
+  padding:28px 22px;
+  text-align:center;
+  border:1px solid rgba(255,255,255,0.06);
+  box-shadow:
+  0 0 25px rgba(0,0,0,0.5),
+  0 0 60px rgba(0,140,255,0.08);
+}
 
-    /* PROFILE IMAGE */
+.profile-wrap{
+  display:flex;
+  justify-content:center;
+  margin-bottom:24px;
+}
 
-    .profile-wrap{
-      display:flex;
-      justify-content:center;
-      margin-bottom:24px;
-    }
+.profile-glow{
+  width:170px;
+  height:170px;
+  border-radius:50%;
+  padding:5px;
+  background:linear-gradient(
+  45deg,
+  #00d9ff,
+  #0066ff,
+  #ff00cc,
+  #ff0033,
+  #00d9ff
+  );
+  background-size:300% 300%;
+  animation:glow 5s linear infinite;
+  box-shadow:
+  0 0 20px #00d9ff,
+  0 0 40px #0066ff,
+  0 0 60px #ff00cc;
+}
 
-    .profile-glow{
-      width:170px;
-      height:170px;
-      border-radius:50%;
-      padding:5px;
-      background:linear-gradient(
-      45deg,
-      #00d9ff,
-      #0066ff,
-      #ff00cc,
-      #ff0033,
-      #00d9ff
-      );
-      background-size:300% 300%;
-      animation:glow 5s linear infinite;
-      box-shadow:
-      0 0 20px #00d9ff,
-      0 0 40px #0066ff,
-      0 0 60px #ff00cc;
-    }
+.profile-glow img{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  object-fit:cover;
+  border:5px solid #07111f;
+}
 
-    .profile-glow img{
-      width:100%;
-      height:100%;
-      border-radius:50%;
-      object-fit:cover;
-      border:5px solid #07111f;
-      display:block;
-    }
+@keyframes glow{
+  0%{
+    background-position:0% 50%;
+  }
+  100%{
+    background-position:300% 50%;
+  }
+}
 
-    @keyframes glow{
-      0%{
-        background-position:0% 50%;
-      }
-      100%{
-        background-position:300% 50%;
-      }
-    }
+.title{
+  font-size:38px;
+  font-weight:800;
+  color:#2da8ff;
+  margin-bottom:10px;
+}
 
-    /* TITLE */
+.subtitle{
+  font-size:16px;
+  line-height:1.6;
+  color:#cfd6df;
+  margin-bottom:28px;
+}
 
-    .title{
-      font-size:38px;
-      font-weight:800;
-      color:#2da8ff;
-      margin-bottom:10px;
-      letter-spacing:1px;
-    }
+.btn{
+  display:block;
+  width:100%;
+  text-decoration:none;
+  background:linear-gradient(90deg,#ff3131,#ff0000);
+  color:white;
+  padding:17px;
+  border-radius:16px;
+  margin-top:18px;
+  font-size:20px;
+  font-weight:700;
+  transition:.3s;
+  box-shadow:0 0 20px rgba(255,0,0,.35);
+}
 
-    .subtitle{
-      font-size:16px;
-      line-height:1.6;
-      color:#cfd6df;
-      margin-bottom:28px;
-    }
+.btn:hover{
+  transform:scale(1.02);
+  box-shadow:0 0 35px rgba(255,0,0,.6);
+}
 
-    /* BUTTON */
+.btn.disabled{
+  opacity:.6;
+  pointer-events:none;
+}
 
-    .btn{
-      display:block;
-      width:100%;
-      text-decoration:none;
-      background:linear-gradient(90deg,#ff3131,#ff0000);
-      color:white;
-      padding:17px;
-      border-radius:16px;
-      margin-top:18px;
-      font-size:20px;
-      font-weight:700;
-      transition:0.3s ease;
-      box-shadow:0 0 20px rgba(255,0,0,0.35);
-    }
+.disclaimer{
+  margin-top:28px;
+  font-size:13px;
+  color:#aeb8c5;
+  line-height:1.7;
+  background:#0c1728;
+  padding:14px;
+  border-radius:14px;
+}
 
-    .btn:hover{
-      transform:scale(1.02);
-      box-shadow:0 0 35px rgba(255,0,0,0.6);
-    }
+.footer{
+  margin-top:22px;
+  font-size:15px;
+  color:#ff5b5b;
+  font-weight:600;
+}
 
-    /* DISCLAIMER */
+@media(max-width:480px){
 
-    .disclaimer{
-      margin-top:28px;
-      font-size:13px;
-      color:#aeb8c5;
-      line-height:1.7;
-      background:#0c1728;
-      padding:14px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,0.04);
-    }
+  .card{
+    padding:24px 18px;
+  }
 
-    .footer{
-      margin-top:22px;
-      font-size:15px;
-      color:#ff5b5b;
-      font-weight:600;
-    }
+  .profile-glow{
+    width:145px;
+    height:145px;
+  }
 
-    /* MOBILE */
+  .title{
+    font-size:31px;
+  }
 
-    @media(max-width:480px){
+  .subtitle{
+    font-size:15px;
+  }
 
-      .card{
-        padding:24px 18px;
-      }
+  .btn{
+    font-size:18px;
+    padding:15px;
+  }
 
-      .profile-glow{
-        width:145px;
-        height:145px;
-      }
+}
 
-      .title{
-        font-size:31px;
-      }
+</style>
 
-      .subtitle{
-        font-size:15px;
-      }
+<!-- META PIXEL -->
 
-      .btn{
-        font-size:18px;
-        padding:15px;
-      }
+<script>
+!function(f,b,e,v,n,t,s)
+{
+  if(f.fbq)return;
 
-    }
+  n=f.fbq=function(){
+    n.callMethod ?
+    n.callMethod.apply(n,arguments) : n.queue.push(arguments)
+  };
 
-  </style>
+  if(!f._fbq)f._fbq=n;
+
+  n.push=n;
+  n.loaded=!0;
+  n.version='2.0';
+  n.queue=[];
+
+  t=b.createElement(e);
+  t.async=!0;
+  t.src=v;
+
+  s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)
+
+}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '27267312522866317');
+
+/* PAGE VIEW */
+fbq('track', 'PageView');
+
+/* CUSTOM VISIT EVENT */
+fbq('trackCustom', 'VIPPageVisit');
+
+</script>
+
+<noscript>
+<img height="1"
+     width="1"
+     style="display:none"
+     src="https://www.facebook.com/tr?id=27267312522866317&ev=PageView&noscript=1"/>
+</noscript>
 
 </head>
 
 <body>
 
-  <div class="card">
+<div class="card">
 
-    <!-- PROFILE IMAGE -->
+  <!-- PROFILE -->
 
-    <div class="profile-wrap">
+  <div class="profile-wrap">
 
-      <div class="profile-glow">
+    <div class="profile-glow">
 
-        <img src="https://i.ibb.co/qMtNXHd7/Whats-App-Image-2026-03-17-at-9-44-37-PM.jpg" alt="Profile">
+      <img src="https://i.ibb.co/qMtNXHd7/Whats-App-Image-2026-03-17-at-9-44-37-PM.jpg" alt="Profile">
 
-      </div>
-
-    </div>
-
-    <!-- TITLE -->
-
-    <div class="title">VIP PREDICTION</div>
-
-    <div class="subtitle">
-      Join our official Telegram channel for VIP predictions,
-      updates, and premium content.
-    </div>
-
-    <!-- BUTTON -->
-
-    <a href="https://t.me/+hwjx7aGCx40wZjNl"
-       class="btn">
-       JOIN TELEGRAM CHANNEL
-    </a>
-
-    <!-- DISCLAIMER -->
-
-    <div class="disclaimer">
-      Disclaimer: This page is created for informational
-      and educational purposes only. Users should verify
-      all information independently before taking action.
-    </div>
-
-    <!-- FOOTER -->
-
-    <div class="footer">
-      Powered by VIP Prediction
     </div>
 
   </div>
+
+  <!-- TITLE -->
+
+  <div class="title">VIP PREDICTION</div>
+
+  <div class="subtitle">
+    Join our official Telegram channel for VIP predictions,
+    updates, and premium content.
+  </div>
+
+  <!-- BUTTON -->
+
+  <a href="https://t.me/+hwjx7aGCx40wZjNl"
+     class="btn"
+     id="joinBtn"
+     target="_blank">
+     JOIN TELEGRAM CHANNEL
+  </a>
+
+  <!-- DISCLAIMER -->
+
+  <div class="disclaimer">
+    Disclaimer: This page is created for informational
+    and educational purposes only.
+  </div>
+
+  <!-- FOOTER -->
+
+  <div class="footer">
+    Powered by VIP Prediction
+  </div>
+
+</div>
+
+<!-- BUTTON TRACKING -->
+
+<script>
+
+let clicked = false;
+
+document.getElementById("joinBtn").addEventListener("click", function(e){
+
+  // Prevent fake rapid clicks
+  if(clicked){
+    e.preventDefault();
+    return false;
+  }
+
+  clicked = true;
+
+  // Disable button temporarily
+  this.classList.add("disabled");
+
+  // TRACK EVENTS
+  fbq('track', 'Lead');
+  fbq('trackCustom', 'TelegramJoin');
+
+  console.log("Telegram Join Event Sent");
+
+  // Re-enable after 8 sec
+  setTimeout(() => {
+
+    clicked = false;
+    document.getElementById("joinBtn").classList.remove("disabled");
+
+  }, 8000);
+
+});
+
+</script>
 
 </body>
 </html>
