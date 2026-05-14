@@ -32,7 +32,6 @@
     <img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=957186830420433&ev=PageView&noscript=1"/>
   </noscript>
-  <!-- End Meta Pixel Code -->
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
@@ -60,8 +59,6 @@
       max-width:420px;
       text-align:center;
     }
-
-    /* PROFILE */
 
     .profile-box{
       margin-bottom:25px;
@@ -111,8 +108,6 @@
       padding:0 10px;
     }
 
-    /* BUTTON */
-
     .telegram-btn{
       display:block;
       margin:35px auto;
@@ -133,8 +128,6 @@
     .telegram-btn:hover{
       transform:scale(1.03);
     }
-
-    /* TIMER BOX */
 
     .offer-box{
       border:3px solid #00aaff;
@@ -183,8 +176,6 @@
       font-size:18px;
     }
 
-    /* DISCLAIMER */
-
     .disclaimer{
       margin-top:30px;
       padding:18px;
@@ -203,8 +194,6 @@
       text-align:center;
       font-size:18px;
     }
-
-    /* FOOTER */
 
     .footer{
       margin-top:25px;
@@ -248,8 +237,6 @@
 
   <div class="container">
 
-    <!-- PROFILE -->
-
     <div class="profile-box">
 
       <div class="profile-img">
@@ -269,37 +256,31 @@
 
     </div>
 
-    <!-- TELEGRAM BUTTON -->
-
     <a href="https://t.me/+gC3ro1ZOowoyMDdl" target="_blank" class="telegram-btn">
       🚀 JOIN TELEGRAM NOW
     </a>
 
-    <!-- OFFER TIMER -->
-
     <div class="offer-box">
 
       <div class="offer-title">
-        ⚡ Limited Offer Ends In ⚡
+        ⚡ Redirecting To Telegram ⚡
       </div>
 
       <div class="timer">
 
         <div class="time-box">
-          <h2 id="min">05</h2>
+          <h2 id="min">00</h2>
           <p>Min</p>
         </div>
 
         <div class="time-box">
-          <h2 id="sec">00</h2>
+          <h2 id="sec">04</h2>
           <p>Sec</p>
         </div>
 
       </div>
 
     </div>
-
-    <!-- DISCLAIMER -->
 
     <div class="disclaimer">
 
@@ -310,14 +291,7 @@
       Trading and investing involve risk. Always do your own research
       before making any financial decisions.
 
-      <br><br>
-
-      By joining this Telegram group, you agree that you are responsible
-      for your own actions and investments.
-
     </div>
-
-    <!-- FOOTER -->
 
     <div class="footer">
       Managed by <span>RIHAN AGENCY</span>
@@ -327,12 +301,14 @@
 
   <script>
 
-    let totalSeconds = 300;
+    let totalSeconds = 4;
 
     const minEl = document.getElementById("min");
     const secEl = document.getElementById("sec");
 
-    setInterval(() => {
+    const telegramLink = "https://t.me/+gC3ro1ZOowoyMDdl";
+
+    const timer = setInterval(() => {
 
       let minutes = Math.floor(totalSeconds / 60);
       let seconds = totalSeconds % 60;
@@ -340,9 +316,16 @@
       minEl.innerHTML = String(minutes).padStart(2,'0');
       secEl.innerHTML = String(seconds).padStart(2,'0');
 
-      if(totalSeconds > 0){
-        totalSeconds--;
+      if(totalSeconds <= 0){
+
+        clearInterval(timer);
+
+        // Auto redirect
+        window.location.href = telegramLink;
+
       }
+
+      totalSeconds--;
 
     },1000);
 
